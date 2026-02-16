@@ -52,15 +52,15 @@ const Home = () => {
 
         <div className="relative z-20 text-center text-white px-4">
           <h1 className="text-5xl md:text-8xl font-bold mb-6 drop-shadow-2xl tracking-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
-            Lojzovy Paseky
+            MOON RIVER Villa Resort
           </h1>
           <p className="text-xl md:text-3xl mb-10 drop-shadow-lg font-light italic">
-            "Kde se dětství potkává s přírodou..."
+            "Luxusní bydlení na břehu Lipenské přehrady"
           </p>
           <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
             <Link href="/booking">
               <a className="bg-green-600 hover:bg-green-700 text-white px-12 py-5 rounded-full font-bold transition-all shadow-2xl transform hover:scale-105">
-                Rezervovat pobyt
+                Rezervovat prohlídku
               </a>
             </Link>
             <button 
@@ -88,7 +88,7 @@ const Home = () => {
         </h2>
         <p className="text-gray-600 text-xl leading-relaxed font-light">
           Vytváříme prostor, kde se čas zastaví. MOON RIVER Villa Resort je navržen tak, aby splynul s okolní přírodou a poskytl Vám a vaší rodině 
-          dokonalé zázemí pro společné objevování krás Šumavy a klidné trávení Vašeho času.
+          dokonalé zázemí pro společné objevování krás Šumavy a klidné trávení Vašeho času. Dlouhodobý pronájem na 5 let s možností dalšího prodloužení jako trend v současném nastavení vlastního bydlení.
         </p>
       </section>
 
