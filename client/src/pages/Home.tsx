@@ -1,202 +1,56 @@
-import React, { useRef, useState } from 'react';
-import { Link } from "wouter";
-import { Music, Volume2, VolumeX, Zap, Leaf, ShieldCheck, Layout, Settings, Droplets } from "lucide-react";
+import React from 'react';
 
-const Home = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const audioRef = useRef<HTMLAudioElement>(null);
-  const [isMuted, setIsMuted] = useState(true);
-  const [isPlayingMusic, setIsPlayingMusic] = useState(false);
-
-  const toggleSound = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !videoRef.current.muted;
-      setIsMuted(videoRef.current.muted);
-    }
-  };
-
-  const toggleMusic = () => {
-    if (audioRef.current) {
-      if (isPlayingMusic) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.play().catch(e => console.log("Audio play failed:", e));
-      }
-      setIsPlayingMusic(!isPlayingMusic);
-    }
-  };
-
+const MoonRiverHero = () => {
   return (
-    <div className="min-h-screen bg-white">
-      {/* Audio element for background music (New World Symphony - Largo) */}
-      <audio 
-        ref={audioRef} 
-        loop 
-        src="https://www.mfiles.co.uk/mp3-downloads/dvorak-new-world-symphony-2nd-movement.mp3"
+    <div className="relative min-h-screen w-full overflow-hidden bg-black font-serif">
+      {/* HLAVNÍ POZADÍ - TVŮJ OBRÁZEK */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url('https://r.jina.ai/i/66736486675e4782974b62d887a03043')`, // Tady je tvůj vygenerovaný obraz
+          filter: 'brightness(0.7)'
+        }}
       />
 
-      {/* --- HERO SEKCE S VIDEEM --- */}
-      <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute z-0 w-auto min-w-full min-h-full max-w-none object-cover"
-        >
-          <source src="/lipno-intro.mp4" type="video/mp4" />
-        </video>
-
-        <div className="absolute inset-0 bg-black/40 z-10" />
-
-        <div className="relative z-20 text-center text-white px-4">
-          <h1 className="text-5xl md:text-8xl font-bold mb-6 drop-shadow-2xl tracking-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
-            MOON RIVER Villa Resort
-          </h1>
-          <p className="text-xl md:text-3xl mb-10 drop-shadow-lg font-light italic">
-            "Luxusní bydlení na břehu Lipenské přehrady"
-          </p>
-          <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
-            <Link href="/booking">
-              <a className="bg-green-600 hover:bg-green-700 text-white px-12 py-5 rounded-full font-bold transition-all shadow-2xl transform hover:scale-105">
-                Rezervovat prohlídku
-              </a>
-            </Link>
-            <button 
-              onClick={toggleMusic}
-              className="flex items-center gap-3 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/40 px-8 py-4 rounded-full font-bold transition-all shadow-lg"
-            >
-              {isPlayingMusic ? <Volume2 size={20} /> : <Music size={20} />}
-              {isPlayingMusic ? "Zastavit hudbu" : "Pustit atmosféru"}
-            </button>
-          </div>
-        </div>
-
-        <button
-          onClick={toggleSound}
-          className="absolute bottom-10 right-10 z-30 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/40 text-white p-4 rounded-full transition-all"
-        >
-          {isMuted ? <VolumeX size={24} /> : <Volume2 size={24} />}
-        </button>
-      </section>
-
-      {/* --- INFORMAČNÍ SEKCE --- */}
-      <section className="py-24 px-6 max-w-5xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-8 text-green-900" style={{ fontFamily: "'Playfair Display', serif" }}>
-          Symfonie klidu na břehu Lipna
+      {/* TEXTOVÁ VRSTVA */}
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4">
+        <h2 className="text-xl md:text-3xl tracking-[0.3em] text-amber-200/80 mb-2 uppercase">
+          Villa Resort
         </h2>
-        <p className="text-gray-600 text-xl leading-relaxed font-light">
-          Vytváříme prostor, kde se čas zastaví. MOON RIVER Villa Resort je navržen tak, aby splynul s okolní přírodou a poskytl Vám a vaší rodině 
-          dokonalé zázemí pro společné objevování krás Šumavy a klidné trávení Vašeho času. Dlouhodobý pronájem na 5 let s možností dalšího prodloužení jako trend v současném nastavení vlastního bydlení.
+        
+        <div className="relative">
+          {/* HLAVNÍ NÁPIS */}
+          <h1 className="text-6xl md:text-9xl font-bold text-white tracking-tighter mix-blend-overlay opacity-90">
+            MOON RIVER
+          </h1>
+          
+          {/* EFEKT VLNĚNÍ NA HLADINĚ (ODRAZ) */}
+          <div className="absolute -bottom-16 left-0 w-full overflow-hidden select-none pointer-events-none">
+            <h1 className="text-6xl md:text-9xl font-bold text-white tracking-tighter scale-y-[-1] opacity-20 blur-[2px] animate-pulse">
+              MOON RIVER
+            </h1>
+            {/* Animovaná clona pro efekt vody */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent h-full w-full animate-[wave_5s_ease-in-out_infinite]" />
+          </div>
+        </div>
+      </div>
+
+      {/* LEGISLATIVNÍ / STRATEGICKÝ PODTEXT (V dolní části) */}
+      <div className="absolute bottom-10 w-full text-center z-20">
+        <p className="text-amber-100/50 text-sm tracking-widest uppercase italic">
+          Safe-Haven Concept • Lipno 2026 • Exclusive 5+5 Lease
         </p>
-      </section>
+      </div>
 
-      {/* --- SEKCE "DO STŘEV" - TECHNOLOGIE A SOBĚSTAČNOST --- */}
-      <section className="py-24 bg-gray-900 text-white px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4" style={{ fontFamily: "'Playfair Display', serif" }}>Pohled do střev projektu</h2>
-            <p className="text-gray-400 text-xl">Když se špičková technologie snoubí s respektem k přírodě.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div className="flex gap-6">
-                <div className="bg-green-600/20 p-4 rounded-xl h-fit">
-                  <Zap className="text-green-500 w-8 h-8" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold mb-2">Energetická soběstačnost</h3>
-                  <p className="text-gray-400 leading-relaxed">
-                    Naše domy jsou navrženy s důrazem na minimální energetickou stopu. 
-                    Využíváme moderní a inteligentní systémy řízení spotřeby a energeticky nenáročné způsoby získávání energie.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-6">
-                <div className="bg-blue-600/20 p-4 rounded-xl h-fit">
-                  <Settings className="text-blue-500 w-8 h-8" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold mb-2">Tepelná čerpadla</h3>
-                  <p className="text-gray-400 leading-relaxed">
-                    O tepelnou pohodu se starají nejmodernější tepelná čerpadla země-voda, 
-                    která zajišťují efektivní vytápění i ohřev vody s minimálními náklady.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-6">
-                <div className="bg-orange-600/20 p-4 rounded-xl h-fit">
-                  <Droplets className="text-orange-500 w-8 h-8" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold mb-2">Chytré hospodaření s vodou</h3>
-                  <p className="text-gray-400 leading-relaxed">
-                    Využíváme systémy pro sběr dešťové vody a její následné využití v zahradě, 
-                    čímž šetříme drahocenné přírodní zdroje.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white/5 p-8 rounded-3xl border border-white/10 backdrop-blur-sm">
-              <div className="aspect-video bg-gray-800 rounded-xl mb-6 flex items-center justify-center overflow-hidden border border-white/5">
-                {/* Placeholder pro půdorys */}
-                <div className="text-center p-8">
-                  <Layout className="w-16 h-16 text-gray-600 mx-auto mb-4" />
-                  <p className="text-gray-500 font-mono text-sm uppercase tracking-widest">Technický půdorys bungalovu</p>
-                  <p className="text-gray-400 mt-2 italic">Prostor vymyšlený do posledního milimetru.</p>
-                </div>
-              </div>
-              <div className="grid grid-cols-2 gap-4 text-sm">
-                <div className="bg-white/5 p-4 rounded-lg">
-                  <span className="text-gray-500 block mb-1">Užitná plocha</span>
-                  <span className="text-xl font-bold">115 m²</span>
-                </div>
-                <div className="bg-white/5 p-4 rounded-lg">
-                  <span className="text-gray-500 block mb-1">Počet pokojů</span>
-                  <span className="text-xl font-bold">4 + KK</span>
-                </div>
-                <div className="bg-white/5 p-4 rounded-lg">
-                  <span className="text-gray-500 block mb-1">Terasa</span>
-                  <span className="text-xl font-bold">28 m²</span>
-                </div>
-                <div className="bg-white/5 p-4 rounded-lg">
-                  <span className="text-gray-500 block mb-1">Energetická třída</span>
-                  <span className="text-xl font-bold text-green-500">A+</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      {/* --- SEKCE S VÝHODAMI --- */}
-      <section className="py-24 bg-[#fdfbf7] px-6 border-y border-gray-100">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16">
-          <div className="text-center group">
-            <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform">🌲</div>
-            <h3 className="text-2xl font-bold mb-4 text-green-900">Nedotčená příroda</h3>
-            <p className="text-gray-600 text-lg">Probouzejte se za zpěvu ptáků a šumění lesa přímo u vašich dveří.</p>
-          </div>
-          <div className="text-center group">
-            <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform">🏡</div>
-            <h3 className="text-2xl font-bold mb-4 text-green-900">Designový komfort</h3>
-            <p className="text-gray-600 text-lg">Moderní architektura, která ctí tradici a nabízí veškeré pohodlí 21. století.</p>
-          </div>
-          <div className="text-center group">
-            <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform">✨</div>
-            <h3 className="text-2xl font-bold mb-4 text-green-900">Unikátní atmosféra</h3>
-            <p className="text-gray-600 text-lg">Místo, kde každá vteřina hraje tu nejkrásnější melodii vašeho života.</p>
-          </div>
-        </div>
-      </section>
+      {/* Definice animace vlnění (Inline CSS) */}
+      <style>{`
+        @keyframes wave {
+          0%, 100% { transform: translateY(0) scaleY(1); opacity: 0.2; }
+          50% { transform: translateY(5px) scaleY(1.1); opacity: 0.3; }
+        }
+      `}</style>
     </div>
   );
 };
 
-export default Home;
+export default MoonRiverHero;
