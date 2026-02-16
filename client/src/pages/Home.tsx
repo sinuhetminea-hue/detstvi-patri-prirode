@@ -87,9 +87,8 @@ const Home = () => {
           Symfonie klidu na břehu Lipna
         </h2>
         <p className="text-gray-600 text-xl leading-relaxed font-light">
-          Vytváříme prostor, kde se čas zastaví. Naše moderní bungalovy v Lojzových Pasekách 
-          jsou navrženy tak, aby splynuly s okolní přírodou a poskytly vaší rodině 
-          dokonalé zázemí pro společné objevování krás Šumavy.
+          Vytváříme prostor, kde se čas zastaví. MOON RIVER Villa Resort je navržen tak, aby splynul s okolní přírodou a poskytl Vám a vaší rodině 
+          dokonalé zázemí pro společné objevování krás Šumavy a klidné trávení Vašeho času.
         </p>
       </section>
 
@@ -111,7 +110,7 @@ const Home = () => {
                   <h3 className="text-2xl font-bold mb-2">Energetická soběstačnost</h3>
                   <p className="text-gray-400 leading-relaxed">
                     Naše domy jsou navrženy s důrazem na minimální energetickou stopu. 
-                    Využíváme moderní fotovoltaické systémy a inteligentní řízení spotřeby.
+                    Využíváme moderní a inteligentní systémy řízení spotřeby a energeticky nenáročné způsoby získávání energie.
                   </p>
                 </div>
               </div>
@@ -123,7 +122,7 @@ const Home = () => {
                 <div>
                   <h3 className="text-2xl font-bold mb-2">Tepelná čerpadla</h3>
                   <p className="text-gray-400 leading-relaxed">
-                    O tepelnou pohodu se starají nejmodernější tepelná čerpadla vzduch-voda, 
+                    O tepelnou pohodu se starají nejmodernější tepelná čerpadla země-voda, 
                     která zajišťují efektivní vytápění i ohřev vody s minimálními náklady.
                   </p>
                 </div>
@@ -175,39 +174,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* --- SEKCE MATERIÁLY --- */}
-      <section className="py-24 bg-white px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row gap-16 items-center">
-            <div className="md:w-1/2">
-              <h2 className="text-4xl font-bold mb-6 text-green-900" style={{ fontFamily: "'Playfair Display', serif" }}>Přírodní materiály, které dýchají</h2>
-              <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                Vsadili jsme na poctivé materiály, které stárnou do krásy. Masivní dřevo ze šumavských lesů, 
-                přírodní kámen a ekologické izolace vytvářejí v interiéru klima, které pocítíte hned při prvním nadechnutí.
-              </p>
-              <ul className="space-y-4">
-                <li className="flex items-center gap-3 text-gray-700">
-                  <ShieldCheck className="text-green-600" /> Masivní modřínové obklady s dlouhou životností
-                </li>
-                <li className="flex items-center gap-3 text-gray-700">
-                  <ShieldCheck className="text-green-600" /> Izolace z ovčí vlny a dřevovláknitých desek
-                </li>
-                <li className="flex items-center gap-3 text-gray-700">
-                  <ShieldCheck className="text-green-600" /> Lokální kámen pro akumulaci tepla
-                </li>
-              </ul>
-            </div>
-            <div className="md:w-1/2 grid grid-cols-2 gap-4">
-              <div className="h-64 bg-gray-100 rounded-2xl overflow-hidden">
-                <img src="/images/bungalow-kitchen-detail.jpg" alt="Detail materiálu" className="w-full h-full object-cover" />
-              </div>
-              <div className="h-64 bg-gray-100 rounded-2xl overflow-hidden mt-8">
-                <img src="/images/sustainable-living.jpg" alt="Udržitelné bydlení" className="w-full h-full object-cover" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* --- SEKCE S VÝHODAMI --- */}
       <section className="py-24 bg-[#fdfbf7] px-6 border-y border-gray-100">
